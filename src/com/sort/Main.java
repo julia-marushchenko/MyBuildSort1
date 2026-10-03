@@ -1,8 +1,10 @@
 /**
- *  Java program to sort the array with selection algorithm.
+ *  Java program to use build-in sorting algorithm.
  */
 
-package com.sort;
+package com.mysort;
+
+import java.util.Arrays;
 
 /**
  *  Main class.
@@ -13,34 +15,16 @@ public class Main {
     public static void main(String[] args) {
 
         // Creating an array.
-        int[] array = {5, 1, 6, -4, 8, 3};
+        String[] array = {"c", "b", "a"};
+
+        // Printing original array.
+        System.out.println("Original: " + Arrays.toString(array)); // Output: Original: [c, b, a]
 
         // Sorting the array.
-        for (int i = 0; i <= array.length - 1; i++) {
+        Arrays.sort(array);
 
-            // Helping variables.
-            int minValue = array[i];
-            int minIndex = i;
+        // Printing sorted array.
+        System.out.println("Sorted: " + Arrays.toString(array)); // Output: Sorted: [a, b, c]
 
-            // Iterating through the array from min index.
-            for (int j = i + 1; j < array.length; j++) {
-
-                if(array[j] < minValue) {
-                    minValue = array[j];
-                    minIndex = j;
-
-                }
-            }
-
-            int temp = array[i];
-            array[i] = array[minIndex];
-            array[minIndex] = temp;
-
-        }
-
-        // Printing the sorted array.
-        for (int k = 0; k < array.length; k++) {
-            System.out.print(array[k] + " ");
-        }
     }
 }
